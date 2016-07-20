@@ -47,7 +47,7 @@
 			//success callback
 				console.log("Success",res);
 			// In the products array put all the data found inside the response.data.products(database)
-			//self.products = res.data.products;
+			// self.products = res.data.products;
 				console.log("self.products",self.products);
 			// Return array filled with data back to the user
 				return res.data.products;

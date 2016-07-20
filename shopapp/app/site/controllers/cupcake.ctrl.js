@@ -1,13 +1,12 @@
 (function(){
 	angular
 		.module('shopApp')
-		.controller('ShopCtrl',ShopCtrl)
+		.controller('CupcakeCtrl',CupcakeCtrl);
 
-	function ShopCtrl($scope,productSrv){
+	function CupcakeCtrl($scope,productSrv){
 		var shopVm = this;
 
 		//TODO #3 Capture resolved products for view
-
 		// Get array of products from service and assign it
 		shopVm.products = productSrv.products;
 

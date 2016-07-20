@@ -1,9 +1,9 @@
 (function(){
 	angular
 		.module('shopApp')
-		.controller('ShopCtrl',ShopCtrl)
+		.controller('ProductsCtrl',ProductsCtrl)
 
-	function ShopCtrl($scope,productSrv){
+	function ProductsCtrl($scope,productSrv){
 		var shopVm = this;
 
 		//TODO #3 Capture resolved products for view
