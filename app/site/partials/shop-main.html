@@ -1,10 +1,12 @@
 <nav>
 	<div class="content-wrapper">
 		<ul class="left-nav">
-			<li><img src="assets/img/logo.png"></li>
+			<li><img src="assets/img/logo2.png"></li>
 		</ul>
 		<ul class="right-nav">
-			<li><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></li>
+			<li> 
+  				<i class="fa fa-shopping-cart"></i><span class="cart">Treat Bag</span> &nbsp;&nbsp; <span class="sign">Sign In</span>
+  			</li>
 		</ul>
 	</div>
 </nav>
@@ -15,18 +17,17 @@
 			<div class="table-cell">
 				<div class="content">		
 					<h1>
-						Manage Your Closet.
+						How Will You Treat People?
 					</h1>
 					<h3>
-						Buy and Sell used fashion items from virtually anywhere.
+						Choose from three desserts to delight your friends, guests or family
 					</h3>
-
 					<div class="">
 						<form>
 							<!-- TO DO #3: ENABLE PRODUCT SEARCH -->
 							<div class="form-container">
-								<input type="text" class="form-control"  placeholder="Search for a brand or item" >
-								<a class="search-btn"><img src="assets/img/icon-search@2x.png"></a>
+								<input type="text" class="form-control"  placeholder="&#9733;&nbsp;Search for a sweet&nbsp;&#9733;" >
+								
 							</div>
 						</form>
 					</div>
@@ -37,17 +38,18 @@
 </section>
 
 
+
+
 <section class="secondary-nav" role="sub-nav">
 	<div class="content-wrapper">
 		<!-- TO DO #3: SET CATEGORY SEARCH AND SET FOCUS CLASS-->
-		<ul class="product-nav">
-			<li ><a>All</a></li>
-			<li ><a>Shoes</a></li>
-			<li ><a>Shirts</a></li>
-			<li ><a>Pants</a></li>
-			<li ><a>Outerwear</a></li>
-			<li ><a>Accessories</a></li>
-		</ul>
+        	
+		<ul class="nav product-nav nav-pills">
+			<center><li class="active">  <a ng-click="ctrl.icecreamPage()">Ice Cream</a></li>
+			<li role="presentation"> <a ng-click="ctrl.cookiePage()">Cookies</a></li>
+			<li role="presentation"> <a ng-click="ctrl.cupcakePage()">Cupcakes</a></li></center>
+		</ul>	
+		 
 	</div>
 </section>
 
@@ -55,37 +57,81 @@
 <section class="product-view" role="product-view">
 	<div class="content-wrapper">
 		<div class="row">
-			<!-- TODO #3: SHOW PRODUCTS -->
-			<div class="col-xs-12 col-sm-3">
+			<div class="col-xs-12 col-sm-12 col-m-12">
 				<div id="product-card" class="product-card">
-					<div class="product-buy">
-						<div class="table-view">
-							<div class="table-cell">
-								<i class="fa fa-shopping-cart"></i>
-							</div>
-						</div>
-					</div>
+
 					<!-- SET PRODUCT IMAGE -->
-					<div class="product-img" style="background:url('/assets/img/');background-size:cover;background-position:center center">
+					<div class="product-img" style="background:url('../../assets/img/description/icecream.jpg');background-size:cover;background-position:center center">
 					</div>
 
 					<div class="product-info">
 						<div class="product-name">
 							<!-- SET PRODUCT NAME -->
-							
+							Ice Cream
 							
 						</div>
 						<div class="product-brand">
+						"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 							<!-- SET PRODUCT Description -->
 							<em></em>
 						</div>
 						<div class="product-cost">
 							<!-- SET PRODUCT PRICE WITH FILTER -->
+							View our flavours &rarr;
 							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-m-12">
+				<div id="product-card" class="product-card">
+
+					<!-- SET PRODUCT IMAGE -->
+					<div class="product-imgr" style="background:url('../../assets/img/description/cookies.jpg');background-size:cover;background-position:center center">
+					</div>
+
+					<div class="product-info">
+						<div class="product-name">
+							<!-- SET PRODUCT NAME -->
+							Cookies
+							
+						</div>
+						<div class="product-brand">
+						"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+							<!-- SET PRODUCT Description -->
+							<em></em>
+						</div>
+						<div class="product-cost">
+							<!-- SET PRODUCT PRICE WITH FILTER -->View our varieties &rarr;
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-m-12">
+				<div id="product-card" class="product-card">
+
+					<!-- SET PRODUCT IMAGE -->
+					<div class="product-img" style="background:url('../../assets/img/description/cupcakes.jpg');background-size:cover;background-position:center center">
+					</div>
+
+					<div class="product-info">
+						<div class="product-name">
+							<!-- SET PRODUCT NAME -->
+							Cupcakes
+							
+						</div>
+						<div class="product-brand">
+						"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+							<!-- SET PRODUCT Description -->
+							<em></em>
+						</div>
+						<div class="product-cost">
+							<!-- SET PRODUCT PRICE WITH FILTER -->
+							View our cupcakes &rarr;
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-<section>
