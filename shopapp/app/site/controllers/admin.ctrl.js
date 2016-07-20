@@ -9,12 +9,18 @@
 		var adminVm = this;
 		adminVm.productSrv = productSrv;
 
+
+		//adminVm.addSweets = addSweets;
+
 		//check if logged in
-		if(localStorage.authToken == undefined || localStorage.authToken == null){
+	if(localStorage.authToken == undefined || localStorage.authToken == null){
 			$state.go('auth');
 		}
 					
-		adminVm.products;
+		adminVm.products = adminVm.productSrv.products
+		console.log(adminVm.products);
+
+
 		if(adminVm.products.length > 0 ){
 			adminVm.is_products = true;
 		}
@@ -34,6 +40,7 @@
 		adminVm.logout = logout;
 
 		function editProduct(product){
+			console.log("Logging from editProduct");
 			$state.go('admin.edit_product',{productId:product.id});
 		}
 
@@ -41,6 +48,13 @@
 			localStorage.removeItem('authToken');
 			$state.go('auth');
 		}
+
+	/*	function addSweets(sweet) {
+			var treat = productSrv.addProduct(sweet);
+
+		}
+*/
+		//make function to go to next page
 
 	}
 })();

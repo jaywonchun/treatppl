@@ -58,7 +58,7 @@
 				templateUrl:'site/partials/auth-main.html',
 				controller:'AuthCtrl as ctrl',
 			});
-
+//intercept any type of httprequest before sending it, do something to it
 			$httpProvider.interceptors.push(function(){
 		       return {
 		           request: function(config) {
@@ -71,6 +71,7 @@
 		               }
 		               return response;
 		           }
+		           
 		       }
 		   });
 		});
