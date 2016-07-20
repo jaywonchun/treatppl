@@ -21,18 +21,9 @@
 		function getProducts(){
 			return api.request('/products',{},'GET')
 			.then(function(res){
-<<<<<<< HEAD
 				//success callback
 				console.log(res);
 				self.products = res.data.products;
-=======
-			//success callback
-				console.log("Success",res);
-			// In the products array put all the data found inside the response.data.products(database)
-			// self.products = res.data.products;
-				console.log("self.products",self.products);
-			// Return array filled with data back to the user
->>>>>>> origin/master
 				return res.data.products;
 			},function(res){
 				//error callback
