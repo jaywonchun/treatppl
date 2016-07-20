@@ -8,10 +8,11 @@
 		var productVm = this;
 
 		productVm.categories = [
-			{label:'Ice Cream',value:'icecream'},
-			{label:'Cupcakes',value:'cupcakes'},
-			{label:'Cookies',value:'cookies'},
-		
+			{label:'Shirts',value:'shirts'},
+			{label:'Pants',value:'pants'},
+			{label:'Shoes',value:'shoes'},
+			{label:'Outerwear',value:'outerwear'},
+			{label:'Accessories',value:'accessories'},
 		];
 		productVm.product = {};
 		productVm.product_update_btn = 'Update Product';

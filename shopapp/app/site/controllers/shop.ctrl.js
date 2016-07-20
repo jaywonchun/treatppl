@@ -3,17 +3,21 @@
 		.module('shopApp')
 		.controller('ShopCtrl',ShopCtrl)
 
-	function ShopCtrl($state,$scope,productSrv){
+	function ShopCtrl($scope,productSrv){
 		var shopVm = this;
 
 		//TODO #3 Capture resolved products for view
-		shopVm.products;
+		// Get array of products from service and assign it
+		shopVm.products = productSrv.products;
 
 
-        shopVm.icecreamPage = icecreamPage;
-        shopVm.cookiesPage= cookiesPage;
-        shopVm.cupcakePage= cupcakePage;
-
+		// Function to retrieve all the products using the products service
+		shopVm.getAllProducts = getAllProducts;
+		function getAllProducts(){
+				// Get array and store it in local variable
+				var allProducts = productSrv.products;
+				console.log("allProducts",allProducts);
+		};
 
 		//watch for any changes to model data
 		$scope.$watch(function(){
@@ -21,33 +25,6 @@
 		}, function (newValue) {
 		    shopVm.products = productSrv.products;
 		});
-
-
-		function icecreamPage() {
-			alert("Clicked Ice Cream Page");
-
-			//iceCreamVm.loadingAnotherPage = true;
-			$state.go('icecream');
-		}
-
-		function cookiesPage() {
-			alert("Clicked cookie Page");
-
-			//iceCreamVm.loadingAnotherPage = true;
-			$state.go('cookies');
-		}
-
-		function cupcakePage() {
-			alert("Clicked cupcake Page");
-
-			//iceCreamVm.loadingAnotherPage = true;
-			$state.go('cupcake');
-		}
-
 	}
 
-
-
 })();
-
-
