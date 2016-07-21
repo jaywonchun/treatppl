@@ -7,15 +7,20 @@
 	angular
 		.module('shopApp')
 		.config(function($stateProvider, $httpProvider,$urlRouterProvider){
-			
+
 			$urlRouterProvider.otherwise('/');
 
 			$stateProvider
+			// Landing Page
 			.state('shop',{
 				url:'/',
 				templateUrl:'site/partials/shop-main.html',
 				controller:'ShopCtrl as ctrl',
 				//TODO #3 resolve products before main page load
+				/*
+				- products must return a meaningful value
+				- Program will attempt to retrieve value through HTTP request
+				*/
 				resolve:{
 					products:function(productSrv){
 						return productSrv.getProducts();
@@ -23,6 +28,73 @@
 				}
 			})
 
+			// Cookie Page
+			.state('shop.cookie',{
+				url:'/cookie',
+				templateUrl:'site/partials/cookie-page.html',
+				controller:'CookieCtrl as ctrl',
+				//TODO #3 resolve products before main page load
+				/*
+				- products must return a meaningful value
+				- Program will attempt to retrieve value through HTTP request
+				*/
+				resolve:{
+					products:function(productSrv){
+						return productSrv.getProducts();
+					}
+				}
+			})
+
+			// Ice Cream Page
+			.state('shop.icecream',{
+				url:'/icecream',
+				templateUrl:'site/partials/icecream-page.html',
+				controller:'IcecreamCtrl as ctrl',
+				//TODO #3 resolve products before main page load
+				/*
+				- products must return a meaningful value
+				- Program will attempt to retrieve value through HTTP request
+				*/
+				resolve:{
+					products:function(productSrv){
+						return productSrv.getProducts();
+					}
+				}
+			})
+
+			// Cupcake Page
+			.state('shop.cupcake',{
+				url:'/cupcake',
+				templateUrl:'site/partials/cupcake-page.html',
+				controller:'CupcakeCtrl as ctrl',
+				//TODO #3 resolve products before main page load
+				/*
+				- products must return a meaningful value
+				- Program will attempt to retrieve value through HTTP request
+				*/
+				resolve:{
+					products:function(productSrv){
+						return productSrv.getProducts();
+					}
+				}
+			})
+
+			// View All Items
+			.state('shop.products',{
+				url:'/products',
+				templateUrl:'site/partials/products-page.html',
+				controller:'ProductsCtrl as ctrl',
+				//TODO #3 resolve products before main page load
+				/*
+				- products must return a meaningful value
+				- Program will attempt to retrieve value through HTTP request
+				*/
+				resolve:{
+					products:function(productSrv){
+						return productSrv.getProducts();
+					}
+				}
+			})
 			.state('admin',{
 				url:'/admin',
 				templateUrl:'site/partials/admin.html',
@@ -58,7 +130,7 @@
 				templateUrl:'site/partials/auth-main.html',
 				controller:'AuthCtrl as ctrl',
 			});
-//intercept any type of httprequest before sending it, do something to it
+
 			$httpProvider.interceptors.push(function(){
 		       return {
 		           request: function(config) {
@@ -71,9 +143,7 @@
 		               }
 		               return response;
 		           }
-		           
 		       }
 		   });
 		});
 })();
-
