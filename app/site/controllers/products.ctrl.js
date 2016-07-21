@@ -3,17 +3,16 @@
 		.module('shopApp')
 		.controller('ProductsCtrl',ProductsCtrl)
 
-	function ProductsCtrl($scope,productSrv){
-		var shopVm = this;
+	function ProductsCtrl($scope, productSrv){
+	var productsVm = this;
 
 		//TODO #3 Capture resolved products for view
-
 		// Get array of products from service and assign it
-		shopVm.products = productSrv.products;
+		productsVm.products = productSrv.products;
 
 
 		// Function to retrieve all the products using the products service
-		shopVm.getAllProducts = getAllProducts;
+		productsVm.getAllProducts = getAllProducts;
 		function getAllProducts(){
 				// Get array and store it in local variable
 				var allProducts = productSrv.products;
@@ -24,7 +23,7 @@
 		$scope.$watch(function(){
 	    	return productSrv.products;
 		}, function (newValue) {
-		    shopVm.products = productSrv.products;
+		    productsVm.products  = productSrv.products;
 		});
 	}
 
