@@ -8,12 +8,12 @@
 		.module('shopApp')
 		.config(function($stateProvider, $httpProvider,$urlRouterProvider){
 
-			$urlRouterProvider.otherwise('/');
+			$urlRouterProvider.otherwise('/home/splash');
 
 			$stateProvider
 			// Landing Page
 			.state('shop',{
-				url:'/',
+				url:'/home',
 				templateUrl:'site/partials/shop-main.html',
 				controller:'ShopCtrl as ctrl',
 				//TODO #3 resolve products before main page load
@@ -26,6 +26,13 @@
 						return productSrv.getProducts();
 					}
 				}
+			})
+
+			// Splash Page
+			.state('shop.splash',{
+				url:'/splash',
+				templateUrl:'site/partials/splash-page.html',
+				controller:'SplashCtrl as ctrl',
 			})
 
 			// Cookie Page
@@ -95,6 +102,7 @@
 					}
 				}
 			})
+
 			.state('admin',{
 				url:'/admin',
 				templateUrl:'site/partials/admin.html',
