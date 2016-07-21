@@ -106,11 +106,11 @@
 
 
 		function addToCart(){
-			item.push.cart();
+			self.cart.push(productId);
 		}
 
 		function removeFromCart(){
-
+			self.cart.splice(productId);
 		}
 
 
