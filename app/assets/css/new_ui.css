@@ -1,13 +1,13 @@
 
 
-@import url('http://fonts.googleapis.com/css?family=Raleway:400,200');
-
-body{ 
+/*@import url('http://fonts.googleapis.com/css?family=Raleway:400,200');
+*/
+#cookies-products body{ 
 background-color: #ffa2cf;
  }
 
-.transition { transition: .3s cubic-bezier(.3, 0, 0, 1.3) }
-.card {
+#cookies-products .transition { transition: .3s cubic-bezier(.3, 0, 0, 1.3) }
+#cookies-products .card {
     background-color: #fff;
     
     box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
@@ -25,7 +25,7 @@ background-color: #ffa2cf;
     transform: translateX(-50%);
     
 }
-ul
+#cookies-products ul
 {
     list-style-type: none;
 }
@@ -33,7 +33,7 @@ ul
     height: 450px;
     width: 300px;
 }*/
-.card:hover .cta-container {
+#cookies-products .card:hover .cta-container {
     display: inline;
     margin-top: 380px;
 }
@@ -50,7 +50,7 @@ ul
 }
 /*.card:hover h2 small { color: #fff }*/
 /*.card:hover p { margin-top: 300px }*/
-.card_circle img {
+#cookies-products .card_circle img {
     /*background-color: #3487f7;*/
     background-size: 200px;
     border-radius: 75%;
@@ -62,9 +62,9 @@ ul
 }
 
 
-h2 {
+#cookies-products h2 {
     color: #3487f7;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'open-sans', sans-serif;
     font-size: 24px;
     font-weight: 200;
     /*margin-top: 150px;*/
@@ -78,9 +78,9 @@ h2 {
     margin-top: 50px;
     padding: 5px;
 }
-p {
+#cookies-products p {
     color: rgba(0,0,0,.6);
-    font-family: 'Raleway', sans-serif;
+    font-family: 'open-sans', sans-serif;
     font-size: 100%;
     font-weight: normal;
     margin-top: 300px;
@@ -88,7 +88,7 @@ p {
     text-align: center;
     z-index: 9999;
 }
-.cta-container {
+#cookies-products .cta-container {
     display: none;
     margin-top: 320px;
     position: absolute;
@@ -98,8 +98,7 @@ p {
     z-index: 9999;
 }
 
-
-.cta {
+#cookies-products .cta {
     -moz-border-radius: 2px;
     -moz-transition: 0.2s ease-out;
     -ms-transition: 0.2s ease-out;
@@ -111,7 +110,7 @@ p {
     border-radius: 2px;
     color: #8CEDC5;
     display: inline-block;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'open-sans', sans-serif;
     font-size: 17px;
     font-weight: 400;
     height: 36px;
@@ -123,7 +122,7 @@ p {
     text-transform: uppercase;
     transition: 0.2s ease-out;
 }
-.cta:hover {
+#cookies-products .cta:hover {
     background-color: #8CEDC5;
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: #fff;
@@ -131,7 +130,7 @@ p {
     -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.model-content, .modal-header, .modal-body {
+#cookies-products .model-content, .modal-header, .modal-body {
     text-shadow:none;
     color:black;
 }

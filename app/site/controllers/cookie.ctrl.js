@@ -5,6 +5,7 @@
 
 	function CookieCtrl($scope,productSrv){
 		var shopVm = this;
+		console.log('cookiectrl')
 
 		//TODO #3 Capture resolved products for view
 		// Get array of products from service and assign it

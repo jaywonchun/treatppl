@@ -13,7 +13,7 @@
 			$stateProvider
 			// Landing Page
 			.state('shop',{
-				url:'/',
+				url:'/home',
 				templateUrl:'site/partials/shop-main.html',
 				controller:'ShopCtrl as ctrl',
 				//TODO #3 resolve products before main page load
@@ -38,11 +38,11 @@
 				- products must return a meaningful value
 				- Program will attempt to retrieve value through HTTP request
 				*/
-				resolve:{
-					products:function(productSrv){
-						return productSrv.getProducts();
-					}
-				}
+				// resolve:{
+				// 	products:function(productSrv){
+				// 		return productSrv.getProducts();
+				// 	}
+				// }
 			})
 
 			// Ice Cream Page
