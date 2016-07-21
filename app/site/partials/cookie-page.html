@@ -1,16 +1,23 @@
 
 <!-- This section refers to the products view after the navigation bar-->
-<section class="product-view" role="product-view">
-	<div class="content-wrapper">
+<section class="cookieBody" role="product-cookie">
+<span id="cookies-products">
+	<div section="container">
 		<div class="row">
 			<!-- TODO #3: SHOW PRODUCTS -->
-			<div class="col-xs-12 col-sm-3" ng-repeat="product in ctrl.products">
-				<div id="product-card" class="product-card">
-					<div class="product-buy">
-						<div class="table-view">
-							<div class="table-cell">
-								<i class="fa fa-shopping-cart"></i>
-							</div>
+			<ul>
+				<li ng-repeat="products in ctrl.products">
+					<div class="col-md-4">
+						<div class="card transition">
+					  		<!-- PRODUCT NAME -->
+							<h2 class="transition">{{product.name}}</h2>
+							<!-- PRODUCT DESCRIPTION -->
+							<p>{{product.description}}</p>
+							<!-- SET PRODUCT PRICE W/ FILTER-->
+							<p>{{product.price}}</p>
+							<div class="cta-container transition"><a href="#" class="cta">Add to Cart</a></div>
+						<!-- SET PRODUCT IMAGE -->
+							<div class="card_circle transition" style="background:url('/assets/img/{{product.image}}'); background-size: 200px; border-radius: 75%; height: 400px; margin-left: -75px; margin-top: -270px;position: absolute; width: 450px;"></div>
 						</div>
 					</div>
 					<!-- SET PRODUCT IMAGE -->
