@@ -19,6 +19,9 @@
 				console.log("allProducts",allProducts);
 		};
 
+		  
+
+
 		//watch for any changes to model data
 		$scope.$watch(function(){
 	    	return productSrv.products;
