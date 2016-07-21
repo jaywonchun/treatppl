@@ -104,6 +104,7 @@
 			}
 		}
 
+
 		function addToCart(){
 			item.push.cart();
 		}
@@ -111,5 +112,7 @@
 		function removeFromCart(){
 
 		}
+
+
 	}
 })();

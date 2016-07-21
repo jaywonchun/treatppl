@@ -15,6 +15,12 @@
 		}, function (newValue) {
 		    shopVm.products = productSrv.products;
 		});
+
+		shopVm.showModal = showModal; 
+
+		function showModal(){
+			alert('hi');
+		}
 	}
 
 })();
