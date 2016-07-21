@@ -45,11 +45,11 @@
 				- products must return a meaningful value
 				- Program will attempt to retrieve value through HTTP request
 				*/
-				// resolve:{
-				// 	products:function(productSrv){
-				// 		return productSrv.getProducts();
-				// 	}
-				// }
+				resolve:{
+					products:function(productSrv){
+						return productSrv.getProducts();
+					}
+				}
 			})
 
 			// Ice Cream Page
