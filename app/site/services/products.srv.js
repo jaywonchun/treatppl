@@ -8,6 +8,7 @@
 		var self = this;
 		//public variables
 		self.products = [];
+		self.cart = [];
 
 		//public functions
 		self.getProduct = getProduct;
@@ -101,6 +102,14 @@
 					delete self.products[i];
 				}
 			}
+		}
+
+		function addToCart(){
+			item.push.cart();
+		}
+
+		function removeFromCart(){
+
 		}
 	}
 })();
