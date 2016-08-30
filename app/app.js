@@ -2,13 +2,14 @@
 	'use strict';
 
 	angular
-		.module('shopApp',['ui.router', 'ui.bootstrap']);
+		.module('shopApp',['ui.router', 'ui.bootstrap', 'ui-notification'
+]);
 
 	angular
 		.module('shopApp')
 		.config(function($stateProvider, $httpProvider,$urlRouterProvider){
 
-			$urlRouterProvider.otherwise('/home/splash');
+			$urlRouterProvider.otherwise('/home/products');
 
 			$stateProvider
 			// Landing Page
@@ -29,12 +30,7 @@
 			})
 
 			// Splash Page
-			.state('shop.splash',{
-				url:'/splash',
-				templateUrl:'site/partials/splash-page.html',
-				controller:'SplashCtrl as ctrl',
-			})
-
+		
 			// Cookie Page
 			.state('shop.cookie',{
 				url:'/cookie',

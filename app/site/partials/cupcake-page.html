@@ -2,20 +2,27 @@
 
 <!-- This section refers to the products view after the navigation bar-->
 <section class="product-view" role="product-view">
+
 	<div class="content-wrapper">
 		<div class="row">
 			<!-- TODO #3: SHOW PRODUCTS -->
-			<div class="col-xs-12 col-sm-3" ng-repeat="product in ctrl.products">
+			<div class="col-xs-12 col-md-6" ng-repeat="product in ctrl.products | filter: 'cupcakes'  ">
 				<div id="product-card" class="product-card">
 					<div class="product-buy">
 						<div class="table-view">
 							<div class="table-cell">
-								<i class="fa fa-shopping-cart"></i>
+							<!-- save to local storage -->
+								<i ng-class="{'disable': ctrl.checkForDisable(product)}" ng-click= "ctrl.saveToLocalStorage(product)" class="fa fa-shopping-cart"></i>
 							</div>
 						</div>
 					</div>
 					<!-- SET PRODUCT IMAGE -->
-					<div class="product-img" style="background:url('/assets/img/{{product.image}}');background-size:cover;background-position:center center">
+					<div class="product-img" style="background:url('{{product.image}}');
+						height:218px;
+						background-size: 226px  210px;
+						background-position: center;
+						background-repeat: no-repeat;
+					">
 
 					</div>
 
@@ -31,7 +38,7 @@
 						</div>
 						<div class="product-cost">
 							<!-- SET PRODUCT PRICE WITH FILTER -->
-							{{product.price}}
+							${{product.price}}
 						</div>
 					</div>
 				</div>

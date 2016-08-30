@@ -6,34 +6,51 @@
 	function ShopCtrl($scope,productSrv,$uibModal){
 	var productsVm = this;
 
-		productsVm.items = ['item1', 'item2', 'item3'];
+	productsVm.onClick = onClick;
+	productsVm.signin = signin;
+	productsVm.items =[]
+	productsVm.animationsEnabled = true;
+	productsVm.open = open;
 
-		  productsVm.animationsEnabled = true;
+	productsVm.open = function (size) {
+			  	
+	    var modalInstance = $uibModal.open({
+	      animation: productsVm.animationsEnabled,
+	      templateUrl: 'site/partials/modal.html',
+	      controller: 'ModalInstanceCtrl as ctrl',
+    });
 
-		  productsVm.open = open;
 
-		  productsVm.open = function (size) {
-		  	console.log('open');
+	modalInstance.result()
 
-		    var modalInstance = $uibModal.open({
-		      animation: productsVm.animationsEnabled,
-		      templateUrl: 'site/controllers/modal.html',
-		      controller: 'ModalInstanceCtrl',
-		      size: size,
-		      resolve: {
-		        items: function() {
-		          return productsVm.items;
-		        }
-		      }
-		    });
+ 	}
+
+	productsVm.toggleAnimation = function () {
+		productsVm.animationsEnabled = !productsVm.animationsEnabled;
+	};
+
+
+	function onClick() {
+		var testlocal = localStorage.getItem('product');
+		var listLength =  JSON.parse(testlocal);
+		if(listLength == null) {
+			return 0
+		}else {
+			var quantitySum = 0;
+			for(i = 0; i < listLength.length; i++){
+				quantitySum += listLength[i].purchaseQty
+			}
+		   return quantitySum
+
 		}
 
-		  productsVm.toggleAnimation = function () {
-		    productsVm.animationsEnabled = !productsVm.animationsEnabled;
-		};
-
-
 	}
+
+	function signin () {
+		console.log("clicked to sign in");
+	}
+
+}
 
 })();
 

@@ -9,7 +9,8 @@
 		//public variables
 		self.products = [];
 		self.cart = [];
-
+	
+	
 		//public functions
 		self.getProduct = getProduct;
 		self.getProducts = getProducts;
@@ -18,6 +19,9 @@
 		self.updateProductList = updateProductList;
 		self.removeProduct = removeProduct;
 		self.deleteProduct = deleteProduct;
+		self.addToLocalStorage= addToLocalStorage;
+		self.removeFromCart = removeFromCart;
+		//self.disableButton = disableButton; 
 
 		function getProducts(){
 			return api.request('/products',{},'GET')
@@ -109,10 +113,64 @@
 			self.cart.push(productId);
 		}
 
-		function removeFromCart(){
+		function removeFromCart(productId){
+			console.log(self.cart)
 			self.cart.splice(productId);
+			console.log(self.cart); 
 		}
 
+		function addToLocalStorage(product, count) {
+
+  			if (self.cart.length === 0) {
+        		product.purchaseQty = 1;
+        		
+        		
+        		if(product.purchaseQty >= product.quantity){
+        			product.disable = true; 
+        			return product.disable ;
+        		}
+
+        		product.disable = false;
+        		self.cart.push(product);
+
+  			} else {
+  				var duplicateExist = false;
+	            for (var i = 0; i < self.cart.length; i++) {
+	            	if(self.cart[i].name === product.name){
+	            		
+	            		
+					//////// THE OBJECT CANT FIND PURCHASE QUANtity when REFRESHED OR CHANGED TABS
+				        /*if(product.purchaseQty === product.quantity){return}*/
+							
+						if(self.cart[i].purchaseQty >= product.quantity){
+										
+							self.cart[i].disable = true;
+							 console.log("LLL")
+			        		return self.cart[i].disable;
+			        	}
+
+				        self.cart[i].purchaseQty += 1;
+				        duplicateExist = true;
+
+	            	}
+	            }	
+	            //clicked different item
+	            if (!duplicateExist) {
+	            	product.purchaseQty = 1;
+			
+					if(product.purchaseQty >= product.quantity){
+        				return;
+        			}
+
+        			product.disable = false;
+            		self.cart.push(product);
+	            }
+	            
+  			}
+
+			localStorage.setItem('product', JSON.stringify(self.cart));
+
+		}
 
 	}
 })();

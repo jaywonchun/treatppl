@@ -1,15 +1,52 @@
+       
+
+
+
+
         <div class="modal-header">
-            <h3 class="modal-title">I'm a modal!</h3>
-        </div>
-        <div class="modal-body">
+<!--             <h3 class="modal-title">Checkout</h3>
+ -->    </div>
+        <div class="modal-body clearfix">
             <ul>
-                <li ng-repeat="item in items">
-                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+                <li id="itemlist" ng-repeat="item in itemName track by $index" >
+                  <p id= listInformation>
+                     <span id = "itemName">  {{ item.name }}   </span>
+                     <span id = "itemPrice"> ${{ item.price * item.purchaseQty}}  </span>
+                    <!--  <span id = "itemQuantity"> {{ item.quantity }}  </span> -->
+                  </p>
+
+                    <div class = "center">
+                      
+                          <div class="input-group">
+                              <span class="input-group-btn">
+                                  <button ng-click ="subtract($index)" type="button" class="btn btn-number"  data-type="minus" data-field="quant[2]">
+                                    <span class="glyphicon glyphicon-minus"></span>
+                                  </button>
+                              </span>
+                              <input type="number" id= "input1"  class="form-control input-number" min= "1" max = "item.purchaseQty" ng-model="item.purchaseQty" ng-disabled="true">
+                              <span class="  input-group-btn">
+                                  <button ng-click="add($index)" type="button" class=" green btn btn-number" data-type="plus" data-field="quant[2]">
+                                      <div class="glyphicon glyphicon-plus"> </div>
+                                  </button>  
+                              </span>
+
+                                 <span ng-click="removeItem($index)" class="right glyphicon glyphicon-trash"></span> 
+
+                          </div>
+                    </div>
+<!--                    <hr id= "pink">
+ -->
                 </li>
+           
+
             </ul>
-            Selected: <b>{{ selected.item }}</b>
+              <div id = 'checkout'>
+               <p>  <span class = "subtotal"> Subtotal: </span> ${{ subTotal() }}  </p>
+               <p>   <span class = "tax">   Tax: </span> ${{ subTotal() * 0.13 | number:2}} </p>
+               <p> <span class ="total">   Total: </span> ${{subTotal() * 1.13 | number:2}} </p>
+              </div>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-primary" type="button" ng-click="ok($index)">OK</button>
             <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
         </div>

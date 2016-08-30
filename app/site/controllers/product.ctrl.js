@@ -12,11 +12,7 @@
 			{label:'Ice cream',value:'icecream'},
 			{label:'Cookies',value:'cookies'},
 			{label:'Cupcakes',value:'cupcakes'},
-			/*{label:'Shirts',value:'shirts'},
-			{label:'Pants',value:'pants'},
-			{label:'Shoes',value:'shoes'},
-			{label:'Outerwear',value:'outerwear'},
-			{label:'Accessories',value:'accessories'},*/
+			
 		];
 
 		productVm.product = {};
@@ -79,6 +75,7 @@
 			"category": productVm.category,
 			"price": productVm.price,
 			"quantity": productVm.quantity
+			
 		};
 
 		var add = productSrv.addProduct(productVm.product);

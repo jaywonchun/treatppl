@@ -3,7 +3,12 @@
 <section class="product-view" role="product-view">
 							
 <!-- TO DO #3: ENABLE PRODUCT SEARCH -->
-							<form>
+							
+
+
+	<div  class="content-wrapper">
+
+	<form>
 							
 							<div class="form-container">
 								<input ng-model = "ctrl.search" type="text" class="form-control"  placeholder="&#9733;&nbsp;Search for a sweet&nbsp;&#9733;" >
@@ -11,21 +16,25 @@
 							</div>
 						</form>
 
-
-	<div  class="content-wrapper">
+						
 		<div class="row">
 			<!-- TODO #3: SHOW PRODUCTS -->
-			<div class="col-xs-12 col-sm-3" ng-repeat="product in ctrl.products | filter: ctrl.search ">
+			<div class="col-xs-12 col-sm-6" ng-repeat="product in ctrl.products | filter: ctrl.search ">
 				<div id="product-card" class="product-card">
 					<div class="product-buy">
 						<div class="table-view">
 							<div class="table-cell">
-								<i class="fa fa-shopping-cart"></i>
+								<i ng-class="{'disable': ctrl.checkForDisable(product)}" ng-click= "ctrl.saveToLocalStorage(product)" class="fa fa-shopping-cart"></i>
 							</div>
 						</div>
 					</div>
 					<!-- SET PRODUCT IMAGE -->
-					<div class="product-img" style="background:url('/assets/img/{{product.image}}');background-size:cover;background-position:center center">
+					<div class="product-img" style="background:url('{{product.image}}');
+						height:218px;
+						background-size: 226px  210px;
+						background-position: center;
+						background-repeat: no-repeat;
+					">
 
 					</div>
 
@@ -41,7 +50,7 @@
 						</div>
 						<div class="product-cost">
 							<!-- SET PRODUCT PRICE WITH FILTER -->
-							{{product.price}}
+							${{product.price}}
 						</div>
 					</div>
 				</div>

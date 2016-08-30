@@ -5,7 +5,7 @@
 		</ul>
 		<ul class="right-nav">
 			<li>
-  				<a ng-click="ctrl.open()"><i class="fa fa-shopping-cart"></i><span class="cart">Treat Bag</span></a> &nbsp;&nbsp; <span class="sign">Sign In</span>
+  				<a ng-click="ctrl.open()" ng-model="ctrl.onClick"><i class="fa fa-shopping-cart"></i><span class="cart">Treat Bag ({{ctrl.onClick()}}) </span></a> &nbsp;&nbsp; <a class="sign"  ui-sref="admin">My Account {{ctrl.signin()}}</a>
   			</li>
 		</ul>
 	</div>
@@ -22,8 +22,8 @@
 					<h3>
 						Choose from three desserts to delight your friends, guests or family
 					</h3>
-					<div class="">
-						
+					<div>
+						<button ui-sref="shop.products" class="btn"> View All</button>
 					</div>
 				</div>
 			</div>
@@ -43,90 +43,6 @@
 
 	</div>
 </section>
-<<<<<<< Updated upstream
 <ui-view></ui-view>
-=======
 
 
-<section class="product-view" role="product-view">
-	<div class="content-wrapper">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-m-12">
-				<div id="product-card" class="product-card">
-
-					<!-- SET PRODUCT IMAGE -->
-					<div class="product-img" style="background:url('../../assets/img/description/icecream.jpg');background-size:cover;background-position:center center">
-					</div>
-
-					<div class="product-info">
-						<div class="product-name">
-							<!-- SET PRODUCT NAME -->
-							Ice Cream
-
-						</div>
-						<div class="product-brand">
-						"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-							<!-- SET PRODUCT Description -->
-							<em></em>
-						</div>
-						<div class="product-cost">
-							<!-- SET PRODUCT PRICE WITH FILTER -->
-							View our flavours &rarr;
-
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-12 col-m-12">
-				<div id="product-card" class="product-card">
-
-					<!-- SET PRODUCT IMAGE -->
-					<div class="product-imgr" style="background:url('../../assets/img/description/cookies.jpg');background-size:cover;background-position:center center">
-					</div>
-
-					<div class="product-info">
-						<div class="product-name">
-							<!-- SET PRODUCT NAME -->
-							Cookies
-
-						</div>
-						<div class="product-brand">
-						"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-							<!-- SET PRODUCT Description -->
-							<em></em>
-						</div>
-						<div class="product-cost">
-							<!-- SET PRODUCT PRICE WITH FILTER -->View our varieties &rarr;
-
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-12 col-m-12">
-				<div id="product-card" class="product-card">
-
-					<!-- SET PRODUCT IMAGE -->
-					<div class="product-img" style="background:url('../../assets/img/description/cupcakes.jpg');background-size:cover;background-position:center center">
-					</div>
-
-					<div class="product-info">
-						<div class="product-name">
-							<!-- SET PRODUCT NAME -->
-							Cupcakes
-
-						</div>
-						<div class="product-brand">
-						"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-							<!-- SET PRODUCT Description -->
-							<em></em>
-						</div>
-						<div class="product-cost">
-							<!-- SET PRODUCT PRICE WITH FILTER -->
-							View our cupcakes &rarr;
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
->>>>>>> Stashed changes

@@ -1,28 +1,49 @@
 
+
 <!-- This section refers to the products view after the navigation bar-->
-<section class="cookieBody" role="product-cookie">
-<span id="cookies-products">
-	<div section="container">
+<section class="product-view" role="product-view">
+
+	<div class="content-wrapper">
 		<div class="row">
-			<ul>
-				<li ng-repeat="products in ctrl.products">
-					<div class="col-md-4">
-						<div class="card transition">
-							<h2 class="transition">{{products.name}}</h2>
-							<p>{{products.description}}</p>
-							<p>{{products.price}}</p>
-							<div class="cta-container transition"><a href="#" class="cta">Add to Cart</a></div>
-							<div class="card_circle transition" style="background:url('{{products.image}}');
-							background-size: 200px;
-							border-radius: 75%;
-							height: 400px;
-							margin-left: -75px;
-							 margin-top: -270px;
-							 position: absolute;
-							 width: 450px;">
-						 </div>
-					 </div>
-				 </li>
-			 </ul>
-		 </span>
-</section>
+			<!-- TODO #3: SHOW PRODUCTS -->
+			<div class="col-xs-12 col-md-6" ng-repeat="product in ctrl.products | filter: 'cookie'  ">
+				<div id="product-card" class="product-card">
+					<div class="product-buy">
+						<div class="table-view">
+							<div class="table-cell">
+							<!-- save to local storage -->
+
+								<i ng-class="{'disable': ctrl.checkForDisable(product)}" ng-click= "ctrl.saveToLocalStorage(product)" class="fa fa-shopping-cart"></i>
+							</div>
+						</div>
+					</div>
+					<!-- SET PRODUCT IMAGE -->
+					<div class="product-img" style="background:url('{{product.image}}');
+						height:218px;
+						background-size: 226px  210px;
+						background-position: center;
+						background-repeat: no-repeat;
+					">
+
+					</div>
+
+					<div class="product-info">
+						<div class="product-name">
+							<!-- SET PRODUCT NAME -->
+							{{product.name}}
+						</div>
+						<div class="product-brand">
+							<!-- SET PRODUCT Description -->
+							{{product.description}}
+							<em></em>
+						</div>
+						<div class="product-cost">
+							<!-- SET PRODUCT PRICE WITH FILTER -->
+							${{product.price}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<section>
